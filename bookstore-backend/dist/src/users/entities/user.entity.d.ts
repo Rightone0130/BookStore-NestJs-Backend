@@ -1,0 +1,8 @@
+import { Book } from 'src/books/entities/book.entity';
+export declare class User {
+    id: number;
+    username: string;
+    books?: Book[];
+    sub: string;
+    role: string;
+}
