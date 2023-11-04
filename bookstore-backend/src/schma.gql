@@ -2,29 +2,59 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Book {
+  description: String!
+  id: Float!
+  name: String!
+  user: User!
+  userId: Int!
+}
+
+input CreateBookInput {
+  description: String!
+  name: String!
+  userId: Int!
+}
+
 input CreateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  role: String!
+  sub: String!
+  username: String!
 }
 
 type Mutation {
+  createBook(createBookInput: CreateBookInput!): Book!
   createUser(createUserInput: CreateUserInput!): User!
+  removeBook(id: Int!): Book!
   removeUser(id: Int!): User!
+  updateBook(updateBookInput: UpdateBookInput!): Book!
   updateUser(updateUserInput: UpdateUserInput!): User!
 }
 
 type Query {
+  book(id: Int!): Book!
+  books: [Book!]!
   user(id: Int!): User!
   users: [User!]!
 }
 
-input UpdateUserInput {
-  """Example field (placeholder)"""
-  exampleField: Int
+input UpdateBookInput {
+  description: String
   id: Int!
+  name: String
+  userId: Int
+}
+
+input UpdateUserInput {
+  id: Int!
+  role: String
+  sub: String
+  username: String
 }
 
 type User {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  id: Float!
+  role: String!
+  sub: String!
+  username: String!
 }

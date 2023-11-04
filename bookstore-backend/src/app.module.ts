@@ -3,6 +3,9 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { UsersModule } from './users/users.module';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { BooksModule } from './books/books.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { dataSourceOptions } from '../db/data-source';
 
 @Module({
   imports: [
@@ -11,7 +14,9 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
       autoSchemaFile: join(process.cwd(), 'src/schma.gql'),
       sortSchema: true,
     }),
-    UsersModule
+    TypeOrmModule.forRoot(dataSourceOptions),
+    UsersModule,
+    BooksModule
   ],
 })
 export class AppModule {}
