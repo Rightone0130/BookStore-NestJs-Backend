@@ -6,6 +6,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { BooksModule } from './books/books.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { dataSourceOptions } from '../db/data-source';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { dataSourceOptions } from '../db/data-source';
     }),
     TypeOrmModule.forRoot(dataSourceOptions),
     UsersModule,
-    BooksModule
+    BooksModule,
+    AuthModule
   ],
 })
 export class AppModule {}

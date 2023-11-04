@@ -15,6 +15,7 @@ const apollo_1 = require("@nestjs/apollo");
 const books_module_1 = require("./books/books.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const data_source_1 = require("../db/data-source");
+const auth_module_1 = require("./auth/auth.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -28,7 +29,8 @@ exports.AppModule = AppModule = __decorate([
             }),
             typeorm_1.TypeOrmModule.forRoot(data_source_1.dataSourceOptions),
             users_module_1.UsersModule,
-            books_module_1.BooksModule
+            books_module_1.BooksModule,
+            auth_module_1.AuthModule
         ],
     })
 ], AppModule);
