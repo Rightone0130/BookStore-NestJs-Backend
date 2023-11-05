@@ -3,7 +3,7 @@ import {  DataSource, DataSourceOptions} from 'typeorm'
 export const dataSourceOptions: DataSourceOptions = {
 
       type: 'sqlite',
-      database: ':memory:',
+      database: 'db.sqlite',
       entities: ['dist/**/*.entity.js'],
       synchronize: true
 }

@@ -4,7 +4,7 @@ exports.dataSourceOptions = void 0;
 const typeorm_1 = require("typeorm");
 exports.dataSourceOptions = {
     type: 'sqlite',
-    database: ':memory:',
+    database: 'db.sqlite',
     entities: ['dist/**/*.entity.js'],
     synchronize: true
 };
