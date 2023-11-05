@@ -8,12 +8,13 @@ export declare class UsersService {
     create(createUserInput: CreateUserInput): Promise<User>;
     findAll(): Promise<User[]>;
     findOne(id: number): Promise<User>;
+    findByUserName(username: string, password: string): Promise<User>;
     update(id: number, updateUserInput: UpdateUserInput): Promise<{
         updateUserInput: UpdateUserInput;
         id: number;
         username: string;
         books?: import("../books/entities/book.entity").Book[];
-        sub: string;
+        password: string;
         role: string;
     } & User>;
     remove(id: number): string;

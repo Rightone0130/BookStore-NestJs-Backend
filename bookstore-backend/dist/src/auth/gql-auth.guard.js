@@ -9,24 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateUserInput = void 0;
+exports.GqlAuthGuard = void 0;
+const common_1 = require("@nestjs/common");
 const graphql_1 = require("@nestjs/graphql");
-let CreateUserInput = class CreateUserInput {
+const passport_1 = require("@nestjs/passport");
+let GqlAuthGuard = class GqlAuthGuard extends (0, passport_1.AuthGuard)('local') {
+    constructor() {
+        super();
+    }
+    getRequest(context) {
+        const ctx = graphql_1.GqlExecutionContext.create(context);
+        const request = ctx.getContext();
+        request.body = ctx.getArgs().loginUserInput;
+        return request;
+    }
 };
-exports.CreateUserInput = CreateUserInput;
-__decorate([
-    (0, graphql_1.Field)(type => String),
-    __metadata("design:type", String)
-], CreateUserInput.prototype, "username", void 0);
-__decorate([
-    (0, graphql_1.Field)(type => String),
-    __metadata("design:type", String)
-], CreateUserInput.prototype, "password", void 0);
-__decorate([
-    (0, graphql_1.Field)(type => String),
-    __metadata("design:type", String)
-], CreateUserInput.prototype, "role", void 0);
-exports.CreateUserInput = CreateUserInput = __decorate([
-    (0, graphql_1.InputType)()
-], CreateUserInput);
-//# sourceMappingURL=create-user.input.js.map
+exports.GqlAuthGuard = GqlAuthGuard;
+exports.GqlAuthGuard = GqlAuthGuard = __decorate([
+    (0, common_1.Injectable)(),
+    __metadata("design:paramtypes", [])
+], GqlAuthGuard);
+//# sourceMappingURL=gql-auth.guard.js.map

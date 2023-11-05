@@ -8,16 +8,16 @@ import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'ty
 export class Book {
  
   @PrimaryGeneratedColumn()
-  @Field()
+  @Field(type => Int)
   id: number;
 
 
   @Column()
-  @Field()
+  @Field(type => String)
   name: string;
 
   @Column()
-  @Field()
+  @Field(type => String)
   description: string;
 
   @Column()

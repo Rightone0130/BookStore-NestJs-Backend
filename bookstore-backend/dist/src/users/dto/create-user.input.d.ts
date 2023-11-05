@@ -1,5 +1,5 @@
 export declare class CreateUserInput {
     username: string;
-    sub: string;
+    password: string;
     role: string;
 }

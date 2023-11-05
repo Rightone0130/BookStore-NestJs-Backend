@@ -4,7 +4,7 @@
 
 type Book {
   description: String!
-  id: Float!
+  id: Int!
   name: String!
   user: User!
   userId: Int!
@@ -17,16 +17,29 @@ input CreateBookInput {
 }
 
 input CreateUserInput {
+  password: String!
   role: String!
-  sub: String!
+  username: String!
+}
+
+type LoginResponse {
+  access_token: String!
+  user: User!
+}
+
+input LoginUserInput {
+  password: String!
+  role: String!
   username: String!
 }
 
 type Mutation {
   createBook(createBookInput: CreateBookInput!): Book!
   createUser(createUserInput: CreateUserInput!): User!
+  login(loginUserInput: LoginUserInput!): LoginResponse!
   removeBook(id: Int!): Book!
   removeUser(id: Int!): User!
+  signup(loginUserInput: LoginUserInput!): User!
   updateBook(updateBookInput: UpdateBookInput!): Book!
   updateUser(updateUserInput: UpdateUserInput!): User!
 }
@@ -47,14 +60,14 @@ input UpdateBookInput {
 
 input UpdateUserInput {
   id: Int!
+  password: String
   role: String
-  sub: String
   username: String
 }
 
 type User {
-  id: Float!
+  id: Int!
+  password: String!
   role: String!
-  sub: String!
   username: String!
 }

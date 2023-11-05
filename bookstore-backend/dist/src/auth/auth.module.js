@@ -10,12 +10,25 @@ exports.AuthModule = void 0;
 const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const auth_resolver_1 = require("./auth.resolver");
+const passport_1 = require("@nestjs/passport");
+const local_strategy_1 = require("./local.strategy");
+const jwt_1 = require("@nestjs/jwt");
+const jwt_strategy_1 = require("./jwt.strategy");
+const users_module_1 = require("../users/users.module");
 let AuthModule = class AuthModule {
 };
 exports.AuthModule = AuthModule;
 exports.AuthModule = AuthModule = __decorate([
     (0, common_1.Module)({
-        providers: [auth_service_1.AuthService, auth_resolver_1.AuthResolver]
+        imports: [
+            passport_1.PassportModule,
+            users_module_1.UsersModule,
+            jwt_1.JwtModule.register({
+                signOptions: { expiresIn: '60s' },
+                secret: 'hide-me'
+            })
+        ],
+        providers: [auth_service_1.AuthService, auth_resolver_1.AuthResolver, local_strategy_1.LocalStrategy, jwt_strategy_1.JwtStrategy]
     })
 ], AuthModule);
 //# sourceMappingURL=auth.module.js.map

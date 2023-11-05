@@ -17,11 +17,15 @@ exports.LoginUserInput = LoginUserInput;
 __decorate([
     (0, graphql_1.Field)(),
     __metadata("design:type", String)
-], LoginUserInput.prototype, "userName", void 0);
+], LoginUserInput.prototype, "username", void 0);
 __decorate([
     (0, graphql_1.Field)(),
     __metadata("design:type", String)
 ], LoginUserInput.prototype, "password", void 0);
+__decorate([
+    (0, graphql_1.Field)(),
+    __metadata("design:type", String)
+], LoginUserInput.prototype, "role", void 0);
 exports.LoginUserInput = LoginUserInput = __decorate([
     (0, graphql_1.InputType)()
 ], LoginUserInput);

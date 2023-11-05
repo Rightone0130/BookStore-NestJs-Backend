@@ -18,12 +18,12 @@ let User = class User {
 exports.User = User;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
-    (0, graphql_1.Field)(),
+    (0, graphql_1.Field)(type => graphql_1.Int),
     __metadata("design:type", Number)
 ], User.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    (0, graphql_1.Field)(),
+    (0, graphql_1.Field)(type => String),
     __metadata("design:type", String)
 ], User.prototype, "username", void 0);
 __decorate([
@@ -32,9 +32,9 @@ __decorate([
 ], User.prototype, "books", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    (0, graphql_1.Field)(),
+    (0, graphql_1.Field)(type => String),
     __metadata("design:type", String)
-], User.prototype, "sub", void 0);
+], User.prototype, "password", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     (0, graphql_1.Field)(),

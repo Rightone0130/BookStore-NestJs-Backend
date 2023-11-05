@@ -31,6 +31,11 @@ let UsersService = class UsersService {
     findOne(id) {
         return this.usersRepository.findOneOrFail({ where: { id } });
     }
+    async findByUserName(username, password) {
+        return this.usersRepository.findOne({
+            where: { username }
+        });
+    }
     async update(id, updateUserInput) {
         const users = await this.usersRepository.findOne({ where: { id } });
         return this.usersRepository.save({ ...users, updateUserInput });

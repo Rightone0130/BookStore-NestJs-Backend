@@ -1,4 +1,5 @@
 export declare class LoginUserInput {
-    userName: string;
+    username: string;
     password: string;
+    role: string;
 }

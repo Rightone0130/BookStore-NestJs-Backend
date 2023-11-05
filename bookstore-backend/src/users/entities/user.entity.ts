@@ -7,22 +7,22 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 export class User {
 
   @PrimaryGeneratedColumn()
-  @Field()
+  @Field(type => Int)
   id: number;
 
 
   @Column()
-  @Field()
+  @Field(type => String)
   username: string;
 
   @OneToMany(() => Book, book => book.user)
   books?: Book[];
 
 
-
   @Column()
-  @Field()
-  sub: string;
+  @Field(type => String)
+  password: string;
+
 
 
   @Column()

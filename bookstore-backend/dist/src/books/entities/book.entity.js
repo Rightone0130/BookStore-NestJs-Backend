@@ -18,17 +18,17 @@ let Book = class Book {
 exports.Book = Book;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
-    (0, graphql_1.Field)(),
+    (0, graphql_1.Field)(type => graphql_1.Int),
     __metadata("design:type", Number)
 ], Book.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    (0, graphql_1.Field)(),
+    (0, graphql_1.Field)(type => String),
     __metadata("design:type", String)
 ], Book.prototype, "name", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    (0, graphql_1.Field)(),
+    (0, graphql_1.Field)(type => String),
     __metadata("design:type", String)
 ], Book.prototype, "description", void 0);
 __decorate([

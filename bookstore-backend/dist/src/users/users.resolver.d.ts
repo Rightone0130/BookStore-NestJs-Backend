@@ -13,7 +13,7 @@ export declare class UsersResolver {
         id: number;
         username: string;
         books?: import("../books/entities/book.entity").Book[];
-        sub: string;
+        password: string;
         role: string;
     } & User>;
     removeUser(id: number): string;

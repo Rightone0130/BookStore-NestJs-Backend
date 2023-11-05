@@ -3,6 +3,6 @@ export declare class User {
     id: number;
     username: string;
     books?: Book[];
-    sub: string;
+    password: string;
     role: string;
 }

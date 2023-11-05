@@ -27,12 +27,21 @@ export class UsersService {
 
   }
 
+    async findByUserName(username: string, password: string) {
+    return this.usersRepository.findOne({
+      where: { username }
+    });
+  }
+  
+
+
   async update(id: number, updateUserInput: UpdateUserInput) {
     
 
     const users = await this.usersRepository.findOne({where: { id } })
      return this.usersRepository.save({ ...users, updateUserInput});
   }
+  
 
   remove(id: number) {
     return `This action removes a #${id} user`;
