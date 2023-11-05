@@ -25,7 +25,7 @@ let AuthResolver = class AuthResolver {
         this.authService = authService;
     }
     login(loginUserInput, context) {
-        return this.authService.login(loginUserInput);
+        return this.authService.login(context.user);
     }
     signup(loginUserInput, context) {
         return this.authService.signup(loginUserInput);

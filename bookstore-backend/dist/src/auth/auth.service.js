@@ -25,8 +25,7 @@ let AuthService = class AuthService {
         }
         return null;
     }
-    async login(loginUserInput) {
-        const user = await this.usersService.findByUserName(loginUserInput.username, loginUserInput.password);
+    async login(user) {
         return {
             access_token: this.jwtService.sign({ sub: user.id, username: user.username }),
             user
