@@ -18,7 +18,6 @@ input CreateBookInput {
 
 input CreateUserInput {
   password: String!
-  role: String!
   username: String!
 }
 
@@ -29,7 +28,6 @@ type LoginResponse {
 
 input LoginUserInput {
   password: String!
-  role: String!
   username: String!
 }
 
@@ -61,13 +59,11 @@ input UpdateBookInput {
 input UpdateUserInput {
   id: Int!
   password: String
-  role: String
   username: String
 }
 
 type User {
   id: Int!
   password: String!
-  role: String!
   username: String!
 }

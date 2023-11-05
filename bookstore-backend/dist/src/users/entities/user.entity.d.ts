@@ -4,5 +4,4 @@ export declare class User {
     username: string;
     books?: Book[];
     password: string;
-    role: string;
 }

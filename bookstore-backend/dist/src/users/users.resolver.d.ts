@@ -14,7 +14,6 @@ export declare class UsersResolver {
         username: string;
         books?: import("../books/entities/book.entity").Book[];
         password: string;
-        role: string;
     } & User>;
     removeUser(id: number): string;
 }

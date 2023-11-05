@@ -10,8 +10,8 @@ export class AuthService {
         private usersService: UsersService,
         private jwtService:JwtService, ) {}
 
-    async validateUser(userName: string, password: string): Promise<any> {
-        const user = await this.usersService.findByUserName(userName, password);
+    async validateUser(username: string, password: string): Promise<any> {
+        const user = await this.usersService.findByUserName(username, password);
 
         // const valid = await bcrypt.compare(password, user?.password);
 
@@ -23,10 +23,10 @@ export class AuthService {
     }
     
 
-    async login(user: User) {
-        
+    async login(loginUserInput: LoginUserInput) {
+        const user = await this.usersService.findByUserName(loginUserInput.username, loginUserInput.password);
         return {
-            access_token: this.jwtService.sign({ sub: user.username}), 
+            access_token: this.jwtService.sign({ sub:user.id , username: user.username}), 
             user
         };
     }
@@ -40,7 +40,7 @@ export class AuthService {
 
         // const password = await bcrypt.hash(loginUserInput.password, 10);
 
-        this.usersService.create({
+        return this.usersService.create({
             ...loginUserInput
         })
 

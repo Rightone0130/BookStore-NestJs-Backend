@@ -22,10 +22,6 @@ __decorate([
     (0, graphql_1.Field)(type => String),
     __metadata("design:type", String)
 ], CreateUserInput.prototype, "password", void 0);
-__decorate([
-    (0, graphql_1.Field)(type => String),
-    __metadata("design:type", String)
-], CreateUserInput.prototype, "role", void 0);
 exports.CreateUserInput = CreateUserInput = __decorate([
     (0, graphql_1.InputType)()
 ], CreateUserInput);

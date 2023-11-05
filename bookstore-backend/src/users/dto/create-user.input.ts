@@ -8,7 +8,5 @@ export class CreateUserInput {
 
   @Field(type => String)
   password: string;
-  
-  @Field(type => String)
-  role: string;
+ 
 }

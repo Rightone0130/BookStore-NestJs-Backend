@@ -18,16 +18,17 @@ let AuthService = class AuthService {
         this.usersService = usersService;
         this.jwtService = jwtService;
     }
-    async validateUser(userName, password) {
-        const user = await this.usersService.findByUserName(userName, password);
+    async validateUser(username, password) {
+        const user = await this.usersService.findByUserName(username, password);
         if (user) {
             return user;
         }
         return null;
     }
-    async login(user) {
+    async login(loginUserInput) {
+        const user = await this.usersService.findByUserName(loginUserInput.username, loginUserInput.password);
         return {
-            access_token: this.jwtService.sign({ sub: user.username }),
+            access_token: this.jwtService.sign({ sub: user.id, username: user.username }),
             user
         };
     }
@@ -36,7 +37,7 @@ let AuthService = class AuthService {
         if (user) {
             throw new Error('User already exists!');
         }
-        this.usersService.create({
+        return this.usersService.create({
             ...loginUserInput
         });
     }

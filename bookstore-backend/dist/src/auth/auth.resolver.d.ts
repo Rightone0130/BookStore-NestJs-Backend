@@ -8,5 +8,5 @@ export declare class AuthResolver {
         access_token: string;
         user: User;
     }>;
-    signup(loginUserInput: LoginUserInput, context: any): Promise<void>;
+    signup(loginUserInput: LoginUserInput, context: any): Promise<User>;
 }

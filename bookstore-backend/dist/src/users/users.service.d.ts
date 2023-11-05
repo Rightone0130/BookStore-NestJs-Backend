@@ -15,7 +15,6 @@ export declare class UsersService {
         username: string;
         books?: import("../books/entities/book.entity").Book[];
         password: string;
-        role: string;
     } & User>;
     remove(id: number): string;
 }
