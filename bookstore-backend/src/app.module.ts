@@ -7,6 +7,7 @@ import { BooksModule } from './books/books.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { dataSourceOptions } from '../db/data-source';
 import { AuthModule } from './auth/auth.module';
+import { AppResolver } from './app/app.resolver';
 
 @Module({
   imports: [
@@ -20,5 +21,6 @@ import { AuthModule } from './auth/auth.module';
     BooksModule,
     AuthModule
   ],
+  providers: [AppResolver],
 })
 export class AppModule {}

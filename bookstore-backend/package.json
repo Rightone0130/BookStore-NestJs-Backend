@@ -35,6 +35,7 @@
     "@nestjs/typeorm": "^10.0.0",
     "@types/passport-local": "^1.0.37",
     "apollo-server-express": "^3.12.1",
+    "cors": "^2.8.5",
     "graphql": "^16.8.1",
     "graphql-tools": "^9.0.0",
     "passport": "^0.6.0",
