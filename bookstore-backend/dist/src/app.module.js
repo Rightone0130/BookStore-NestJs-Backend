@@ -27,7 +27,7 @@ exports.AppModule = AppModule = __decorate([
                 driver: apollo_1.ApolloDriver,
                 autoSchemaFile: (0, path_1.join)(process.cwd(), 'src/schma.gql'),
                 sortSchema: true,
-                context: ({ req }) => ({ req }),
+                csrfPrevention: false
             }),
             typeorm_1.TypeOrmModule.forRoot(data_source_1.dataSourceOptions),
             users_module_1.UsersModule,

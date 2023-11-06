@@ -15,7 +15,7 @@ import { AppResolver } from './app/app.resolver';
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schma.gql'),
       sortSchema: true,
-      context: ({ req }) => ({ req }), // Add this line
+      csrfPrevention:false
     }),
     TypeOrmModule.forRoot(dataSourceOptions),
     UsersModule,
