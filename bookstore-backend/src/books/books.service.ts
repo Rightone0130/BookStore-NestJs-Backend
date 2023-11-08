@@ -8,11 +8,13 @@ import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class BooksService {
-  constructor(@InjectRepository(Book) private booksRepository: Repository<Book>, private ownersService: UsersService){}
-
+  constructor(
+    @InjectRepository(Book) private booksRepository: Repository<Book>,
+    private ownersService: UsersService,
+  ) {}
 
   async create(createBookInput: CreateBookInput): Promise<Book> {
-    const newBook = this.booksRepository.create(createBookInput); 
+    const newBook = this.booksRepository.create(createBookInput);
     return this.booksRepository.save(newBook);
   }
 
@@ -22,19 +24,19 @@ export class BooksService {
 
   async findOne(id: number): Promise<Book> {
     return this.booksRepository.findOneOrFail({
-      where: { id }
-});
+      where: { id },
+    });
   }
 
   async update(id: number, updateBookInput: UpdateBookInput) {
-    const books = await  this.booksRepository.findOne({ where :{id}});
+    const books = await this.booksRepository.findOne({ where: { id } });
 
-    return  this.booksRepository.save({ ...books, ...updateBookInput});
+    return this.booksRepository.save({ ...books, ...updateBookInput });
   }
 
   async remove(id: number) {
-    const book = await  this.booksRepository.findOne({ where :{id}});
+    const book = await this.booksRepository.findOne({ where: { id } });
 
-     return this.booksRepository.remove(book);
+    return this.booksRepository.remove(book);
   }
 }

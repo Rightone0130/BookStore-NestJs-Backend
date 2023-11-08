@@ -16,7 +16,6 @@ const books_module_1 = require("./books/books.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const data_source_1 = require("../db/data-source");
 const auth_module_1 = require("./auth/auth.module");
-const app_resolver_1 = require("./app/app.resolver");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -33,9 +32,9 @@ exports.AppModule = AppModule = __decorate([
             typeorm_1.TypeOrmModule.forRoot(data_source_1.dataSourceOptions),
             users_module_1.UsersModule,
             books_module_1.BooksModule,
-            auth_module_1.AuthModule
+            auth_module_1.AuthModule,
         ],
-        providers: [app_resolver_1.AppResolver],
+        providers: [],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

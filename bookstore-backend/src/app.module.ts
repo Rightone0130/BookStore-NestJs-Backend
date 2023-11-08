@@ -7,7 +7,6 @@ import { BooksModule } from './books/books.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { dataSourceOptions } from '../db/data-source';
 import { AuthModule } from './auth/auth.module';
-import { AppResolver } from './app/app.resolver';
 
 @Module({
   imports: [
@@ -15,14 +14,14 @@ import { AppResolver } from './app/app.resolver';
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schma.gql'),
       sortSchema: true,
-      csrfPrevention:false,
+      csrfPrevention: false,
       introspection: true,
     }),
     TypeOrmModule.forRoot(dataSourceOptions),
     UsersModule,
     BooksModule,
-    AuthModule
+    AuthModule,
   ],
-  providers: [AppResolver],
+  providers: [],
 })
 export class AppModule {}

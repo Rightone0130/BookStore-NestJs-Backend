@@ -15,11 +15,11 @@ let LoginUserInput = class LoginUserInput {
 };
 exports.LoginUserInput = LoginUserInput;
 __decorate([
-    (0, graphql_1.Field)(type => String),
+    (0, graphql_1.Field)((type) => String),
     __metadata("design:type", String)
 ], LoginUserInput.prototype, "username", void 0);
 __decorate([
-    (0, graphql_1.Field)(type => String),
+    (0, graphql_1.Field)((type) => String),
     __metadata("design:type", String)
 ], LoginUserInput.prototype, "password", void 0);
 exports.LoginUserInput = LoginUserInput = __decorate([

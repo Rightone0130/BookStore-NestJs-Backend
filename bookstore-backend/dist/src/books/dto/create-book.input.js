@@ -23,7 +23,7 @@ __decorate([
     __metadata("design:type", String)
 ], CreateBookInput.prototype, "description", void 0);
 __decorate([
-    (0, graphql_1.Field)(type => graphql_1.Int),
+    (0, graphql_1.Field)((type) => graphql_1.Int),
     __metadata("design:type", Number)
 ], CreateBookInput.prototype, "userId", void 0);
 exports.CreateBookInput = CreateBookInput = __decorate([

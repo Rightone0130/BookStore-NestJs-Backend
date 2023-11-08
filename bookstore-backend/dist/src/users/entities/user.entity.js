@@ -18,21 +18,21 @@ let User = class User {
 exports.User = User;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
-    (0, graphql_1.Field)(type => graphql_1.Int),
+    (0, graphql_1.Field)((type) => graphql_1.Int),
     __metadata("design:type", Number)
 ], User.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    (0, graphql_1.Field)(type => String),
+    (0, graphql_1.Field)((type) => String),
     __metadata("design:type", String)
 ], User.prototype, "username", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => book_entity_1.Book, book => book.user),
+    (0, typeorm_1.OneToMany)(() => book_entity_1.Book, (book) => book.user),
     __metadata("design:type", Array)
 ], User.prototype, "books", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    (0, graphql_1.Field)(type => String),
+    (0, graphql_1.Field)((type) => String),
     __metadata("design:type", String)
 ], User.prototype, "password", void 0);
 exports.User = User = __decorate([

@@ -7,14 +7,13 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class UsersService {
-  constructor(@InjectRepository(User) private usersRepository: Repository<User>){}
-
-
+  constructor(
+    @InjectRepository(User) private usersRepository: Repository<User>,
+  ) {}
 
   create(createUserInput: CreateUserInput) {
-    
-    const newUser = this.usersRepository.create(createUserInput)
-     return this.usersRepository.save(newUser);
+    const newUser = this.usersRepository.create(createUserInput);
+    return this.usersRepository.save(newUser);
   }
 
   findAll() {
@@ -22,26 +21,19 @@ export class UsersService {
   }
 
   findOne(id: number) {
-    return this.usersRepository.findOneOrFail( {where: { id } });
-                  
-
+    return this.usersRepository.findOneOrFail({ where: { id } });
   }
 
-    async findByUserName(username: string, password: string) {
+  async findByUserName(username: string, password: string) {
     return this.usersRepository.findOne({
-      where: { username }
+      where: { username },
     });
   }
-  
-
 
   async update(id: number, updateUserInput: UpdateUserInput) {
-    
-
-    const users = await this.usersRepository.findOne({where: { id } })
-     return this.usersRepository.save({ ...users, updateUserInput});
+    const users = await this.usersRepository.findOne({ where: { id } });
+    return this.usersRepository.save({ ...users, updateUserInput });
   }
-  
 
   remove(id: number) {
     return `This action removes a #${id} user`;

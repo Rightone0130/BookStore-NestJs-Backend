@@ -33,7 +33,7 @@ let UsersService = class UsersService {
     }
     async findByUserName(username, password) {
         return this.usersRepository.findOne({
-            where: { username }
+            where: { username },
         });
     }
     async update(id, updateUserInput) {

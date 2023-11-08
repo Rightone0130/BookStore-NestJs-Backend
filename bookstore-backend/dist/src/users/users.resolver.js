@@ -65,6 +65,7 @@ __decorate([
 ], UsersResolver.prototype, "findOne", null);
 __decorate([
     (0, graphql_1.Mutation)(() => user_entity_1.User),
+    (0, common_1.UseGuards)(gql_auth_guard_1.GqlAuthGuard),
     __param(0, (0, graphql_1.Args)('updateUserInput')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [update_user_input_1.UpdateUserInput]),
@@ -72,6 +73,7 @@ __decorate([
 ], UsersResolver.prototype, "updateUser", null);
 __decorate([
     (0, graphql_1.Mutation)(() => user_entity_1.User),
+    (0, common_1.UseGuards)(gql_auth_guard_1.GqlAuthGuard),
     __param(0, (0, graphql_1.Args)('id', { type: () => graphql_1.Int })),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),

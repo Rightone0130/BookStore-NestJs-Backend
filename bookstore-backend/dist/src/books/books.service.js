@@ -32,7 +32,7 @@ let BooksService = class BooksService {
     }
     async findOne(id) {
         return this.booksRepository.findOneOrFail({
-            where: { id }
+            where: { id },
         });
     }
     async update(id, updateBookInput) {
@@ -48,6 +48,7 @@ exports.BooksService = BooksService;
 exports.BooksService = BooksService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, typeorm_2.InjectRepository)(book_entity_1.Book)),
-    __metadata("design:paramtypes", [typeorm_1.Repository, users_service_1.UsersService])
+    __metadata("design:paramtypes", [typeorm_1.Repository,
+        users_service_1.UsersService])
 ], BooksService);
 //# sourceMappingURL=books.service.js.map

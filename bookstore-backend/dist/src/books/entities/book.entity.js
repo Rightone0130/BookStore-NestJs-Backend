@@ -18,27 +18,27 @@ let Book = class Book {
 exports.Book = Book;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
-    (0, graphql_1.Field)(type => graphql_1.Int),
+    (0, graphql_1.Field)((type) => graphql_1.Int),
     __metadata("design:type", Number)
 ], Book.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    (0, graphql_1.Field)(type => String),
+    (0, graphql_1.Field)((type) => String),
     __metadata("design:type", String)
 ], Book.prototype, "name", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    (0, graphql_1.Field)(type => String),
+    (0, graphql_1.Field)((type) => String),
     __metadata("design:type", String)
 ], Book.prototype, "description", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    (0, graphql_1.Field)(type => graphql_1.Int),
+    (0, graphql_1.Field)((type) => graphql_1.Int),
     __metadata("design:type", Number)
 ], Book.prototype, "userId", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => user_entity_1.User, user => user.books),
-    (0, graphql_1.Field)(type => user_entity_1.User),
+    (0, typeorm_1.ManyToOne)(() => user_entity_1.User, (user) => user.books),
+    (0, graphql_1.Field)((type) => user_entity_1.User),
     __metadata("design:type", user_entity_1.User)
 ], Book.prototype, "user", void 0);
 exports.Book = Book = __decorate([
